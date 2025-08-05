@@ -1,0 +1,19 @@
+{
+  "name": "way-out-way-backend",
+  "version": "3.5.1",
+  "private": true,
+  "description": "The NodeJS backend for weoutwest.com",
+  "scripts": {
+    "start": "node ./api/index.ts"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.53.0",
+    "axios": "^1.11.0",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.1",
+    "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.12.5"
+  }
+}
