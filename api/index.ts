@@ -122,22 +122,19 @@ app.post("/events", async (req, res) => {
 })
 
 app.post("/email", async (req, res) => {
-  // const { error, value } = itemSchema.validate(req.body, {
-  //   abortEarly: false,
-  //   stripUnknown: true,
-  //   convert: true
-  // });
+  const { error, value } = itemSchema.validate(req.body, {
+    abortEarly: false,
+    stripUnknown: true,
+    convert: true
+  });
 
-  // if (error) {
-  //   return res.status(400).json({
-  //     error: 'Validation failed',
-  //   });
-  // }
+  if (error) {
+    return res.status(400).json({
+      error: 'Validation failed',
+    });
+  }
   try {
     const item = req.body;
-
-    console.log(req.body);
-    
 
     const mailOptions = {
       from: process.env.email_user,
