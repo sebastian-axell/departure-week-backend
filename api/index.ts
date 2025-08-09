@@ -135,6 +135,8 @@ app.post("/email", async (req, res) => {
   // }
   try {
     const item = req.body;
+
+    console.log(req.body);
     
 
     const mailOptions = {
