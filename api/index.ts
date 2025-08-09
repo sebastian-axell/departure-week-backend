@@ -137,8 +137,8 @@ app.post("/email", async (req, res) => {
     const item = req.body;
 
     const mailOptions = {
-      from: process.env.EMAIL_USER,
-      to: process.env.EMAIL_USER,
+      from: process.env.email_user,
+      to: process.env.email_user,
       subject: `New interest alert for ${item.heading}`,
       html: generateProductEmailHTML(item)
     };
@@ -149,9 +149,6 @@ app.post("/email", async (req, res) => {
       }
       console.log('Email sent:', info.response);
     });
-
-    generateProductEmailHTML(item)
-
 
     res.sendStatus(200);
   } catch (error) {
