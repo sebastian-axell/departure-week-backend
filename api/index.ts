@@ -136,6 +136,9 @@ app.post("/email", async (req, res) => {
   try {
     const item = req.body;
 
+    console.log(req.body);
+    
+
     const mailOptions = {
       from: process.env.email_user,
       to: process.env.email_user,
