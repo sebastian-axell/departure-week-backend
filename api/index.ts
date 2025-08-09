@@ -60,6 +60,7 @@ app.get('/stuff', async (req, res) => {
     const { data, error } = await supabase
       .from('stuff')
       .select('*')
+      .order('id', { ascending: true });
 
     if (error != null) {
       throw new Error(error.message)
@@ -135,9 +136,6 @@ app.post("/email", async (req, res) => {
   // }
   try {
     const item = req.body;
-
-    console.log(req.body);
-
 
     const mailOptions = {
       from: process.env.email_user,
