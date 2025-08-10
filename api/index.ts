@@ -146,12 +146,13 @@ app.post("/email", async (req, res) => {
 
     transporter.sendMail(mailOptions, (err, info) => {
       if (err) {
-        return console.error('Email failed:', err);
+        console.error('Email failed:', err);
+        res.sendStatus(400);
       }
       console.log('Email sent:', info.response);
+      res.sendStatus(200);
     });
 
-    res.sendStatus(200);
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: 'Internal server error' });
